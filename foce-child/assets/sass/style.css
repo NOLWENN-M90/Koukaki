@@ -40,7 +40,8 @@
 
 /* Viédo bannière */
 video {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .banner img {
@@ -365,6 +366,4 @@ swiper-slide img {
 }
 #studio h2::before {
   overflow: hidden;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
