@@ -1,0 +1,488 @@
+/*
+ Theme Name:  Fleurs d'orangers et chats errants - Oscars Short
+ Theme URI: https://www.koukaki.local
+ Author: Studio Koukaki
+ Author URI: https://www.koukaki.local
+ Template: foce
+ Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
+ Version: 0.1
+ */
+ body {
+	margin: 0;
+}
+
+ .fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-in 0.2s, transform 0.5s ease-in 0.2s;
+}
+
+.fade-in-title {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease-in 0.8s, transform 0.5s ease-in 0.8s;
+}
+/* Viédo bannière */
+#video-container {
+  display: none;
+  height: 806px;
+}
+video {
+  object-fit: cover;
+}
+video:hover::-webkit-media-controls {
+  display: none !important; /* Masquer la barre de lecture au hover pour les navigateurs Webkit (comme Chrome et Safari) */
+}
+.banner img {
+  position: relative;
+  top:-550px;
+  left:350px;
+  transform: translatey(0px);
+  animation: float 3s ease-in-out infinite;
+  box-shadow: none;
+}
+
+@keyframes float {
+  0% {
+
+    transform: translatey(0px);
+  }
+
+  50% {
+
+    transform: translatey(-20px);
+  }
+
+  100% {
+
+    transform: translatey(0px);
+  }
+}
+
+
+
+/*  **********************************  */
+/*    Media query : max-width: 700px    */
+/*  **********************************  */
+
+@media all and (max-width: 700px) {
+  .main-navigation {
+    height: 80px;
+  }
+
+  .main-navigation ul {
+    display: flex !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .menu-button-container {
+    display: flex;
+  }
+
+  .menu {
+    position: absolute;
+    top: 0;
+    margin-top: 50px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #menu-toggle~.menu li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  #menu-toggle:checked~.menu li {
+    border: 1px solid #333;
+    height: 2.5em;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .menu>li {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    color: white;
+    background-color: #222;
+  }
+
+  .menu>li:not(:last-child) {
+    border-bottom: 1px solid #444;
+  }
+}
+
+/* ************* */
+/*     MODAL     */
+/* ************* */
+.site-title {
+  font-size: 17px;
+  font-weight: 500;
+  padding-left: 400px;
+  letter-spacing: -0.02em;
+  text-align: center;
+
+
+}
+
+#menu-toggle span {
+  display: block;
+  position: relative;
+  height: 3px;
+  line-height: normal;
+  width: 40px;
+  margin-top:5px;
+  background: #000000;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+}
+
+.main-navigation button.close span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.main-navigation button.close span:nth-child(2) {
+  opacity: 0;
+}
+
+.main-navigation button.close span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+
+.modal {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.4rem;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  
+}
+
+.main-navigation button {
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.modal h2,
+.modal li>a {
+  font-size: 3.1rem;
+  line-height: 84px;
+}
+
+.modal .modal__content {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: #FFF5E9;
+  max-width: 1440px;
+  overflow: hidden;
+  font-size: 3em;
+  display: none;
+}
+
+.story-orchid {
+  position: absolute;
+  left: -59px;
+  top: -152px;
+}
+
+.story-cat {
+  position: absolute;
+  transform: translatey(0px);
+  animation: float 3s ease-in-out infinite;
+  width: 109px;
+  height: 98px;
+  top: -40px;
+  left: 267px;
+}
+
+.story-flower {
+  position: absolute;
+  width: 166px;
+  height: 166px;
+  top: -50px;
+  left: 1070px;
+}
+
+.characters-flower {
+  position: absolute;
+  height: 74px;
+  left: 1396px;
+}
+
+.place-flower {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  left: 216px;
+}
+
+.place-cat {
+  position: absolute;
+  left: 1076px;
+  transform: translatey(0px);
+  animation: float 3s ease-in-out infinite;
+}
+
+.studio-cat {
+  position: absolute;
+  left: 79px;
+  top: 150px;
+  transform: translatey(0px);
+  animation: float 3s ease-in-out infinite;
+}
+
+.studio-flower {
+  position: absolute;
+  left: 1120px;
+}
+
+.modal__content--logo {
+  margin: 40px;
+  width: 154px;
+  transform: translatey(0px);
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0px 0px 10px rgba(255, 92, 0, 1));
+  -webkit-filter: drop-shadow(0px 0px 10px rgba(255, 92, 0, 1));
+  -moz-filter: drop-shadow(0px 0px 10px rgba(255, 92, 0, 1));
+}
+
+.modal__content ul {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 300px;
+  gap: 1em;
+}
+
+.modal__content li>a:hover {
+  filter: drop-shadow(0px 0px 5px #ff5c00);
+  -webkit-filter: drop-shadow(0px 0px 5px #ff5c00);
+  -moz-filter: drop-shadow(0px 0px 5px #ff5c00);
+}
+
+.modal__content--footer {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 40px;
+}
+
+/* Section Oscar  */
+
+.oscar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 965px;
+  margin-bottom: 100px;
+  margin-top: -100px;
+  margin-right: auto;
+  margin-left:auto;
+}
+
+.sunflow,
+.orchid {
+  position: relative;
+}
+
+.sunflow {
+  width: 200px;
+  height: 200px;
+  right: 402px;
+}
+
+.orchid {
+  width: 172.57px;
+  height: 168.24px;
+  right: -22em;
+  overflow: hidden;
+}
+
+// Section lieu et parallax //
+.story #place {
+  background-image: url('/wp-content/themes/foce-child/assets/images/lieu.png');
+}
+
+.parallax-layer {
+  width: 50%;
+}
+
+.nuage1 {
+  position: absolute;
+  left: 1031px;
+  top: 70px;
+  width: 316px;
+}
+
+.nuage2 {
+  position: absolute;
+  left: 793px;
+  width: 142px;
+
+}
+
+/* Swiper carousel */
+.story #characters{
+  text-align: center;
+}
+
+#characters .swiper-container {
+  
+  max-width: 1440px;
+  width: 100%;
+  margin-top: 3em;
+}
+
+#characters .swiper-wrapper {
+  display: flex;
+  margin:auto;
+}
+
+#characters .swiper-slide {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#characters .swiper-slide figure {
+  width: 340px;
+  height: 340px;
+  align-items: center;
+}
+
+#characters .swiper-slide figure img {
+  display: block;
+  width: 100%;
+}
+span.characters__title{
+  position: relative;
+  
+}
+.story #characters h3{
+position: relative;
+right:450px;
+}
+@media screen and (max-width: 1192px) {
+  .site-main .story #characters .swiper-container {
+    max-width: 620px;
+    overflow: hidden;
+  }
+
+  .site-main .story #characters .swiper-slide {
+    margin-right: 0.1em;
+  }
+
+  .story #characters h3 {
+    line-height: 30px;
+    margin-left: -22px;
+  }
+
+  .oscar {
+    flex-direction: column;
+  }
+
+  .orchid {
+    display: none;
+  }
+
+  #studio h2 {
+    display: flex;
+    line-height: 35px;
+  }
+
+  .banner__video {
+    display: none;
+  }
+}
+
+
+
+
+
+/* Rotation fleurs */
+
+.story__article::after,
+.story h2::after,
+#studio h2::after,
+#studio h2::before,
+.site-footer::after,
+.site-footer::before,
+.site-footer::before,
+.sunflow,
+.story-orchid,
+.orchid,
+.story-flower,
+.characters-flower,
+.place-flower,
+.studio-flower,
+.site-footer ul::after {
+  animation: rotating 2s linear infinite;
+}
+
+#studio h2::after {
+  width: 108px;
+  height: 108px;
+}
+
+.story__article::after {
+  width: 188px;
+  height: 188px;
+}
+
+.story h2::after {
+  width: 154px;
+  height: 154px;
+}
+
+#studio h2::before {
+  display:inline-flex;
+  position:relative;
+  left:-450px;
+  width: 202.25px;
+  height: 198.99px;
+}
+#studio h2{
+  padding:0;
+}
+#studio span{
+  position: relative;
+  top: -60px;
+  right: 100px;
+}
+.site-footer::before,
+.site-footer::after {
+  display: none;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
